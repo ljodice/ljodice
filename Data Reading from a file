@@ -1,0 +1,38 @@
+import java.util.Scanner;
+import java.io.File;
+public class Patriotsdata {
+private static Scanner x;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Patriotsdata p = new Patriotsdata();
+		try {
+			x = new Scanner(new File("PatriotsDataset.txt"));
+		}
+		catch(Exception e) {
+			System.out.println("No Players found");
+		}
+	p.readFile();
+	p.closeFile();
+	}
+	public void readFile() {
+		while(x.hasNext()) {
+			String player = x.next();
+			int penalties = x.nextInt();
+			int yardsfrompenelties = x.nextInt();
+			int rushyards = x.nextInt();
+			int completions = x.nextInt();
+			int touchdowns = x.nextInt();
+			int superbowlswon = x.nextInt();
+			System.out.println(player);
+			System.out.println("penalties/Yds:"+penalties+"/"+yardsfrompenelties);
+			System.out.println("Rush yards:"+rushyards);
+			System.out.println("Completions:"+ completions);
+			System.out.println("TD:"+touchdowns);
+			System.out.println("SuperBowls won:"+superbowlswon+"\n\n");
+		}
+	}
+	public void closeFile() {
+		x.close();
+	}
+}
