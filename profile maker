@@ -1,0 +1,50 @@
+import java.util.*;
+import java.io.*;
+public class Userprofilemaker {
+
+	public static void main(String[] args) throws IOException {
+	
+	
+		Scanner input = new Scanner(System.in);
+		System.out.println("First Name:");
+		String firstname = input.nextLine();
+		System.out.println("Last name?");
+		String lastname = input.nextLine();
+		System.out.println("Middle initial:");
+		String middleinitial = input.nextLine();
+		System.out.println("Age:");
+		String age = input.nextLine();
+		System.out.println("Height:");
+		String height = input.nextLine();
+		System.out.println("Weight:");
+		String weight = input.nextLine();
+		System.out.println("Social Security Number:");
+		long ssn = input.nextLong();
+		System.out.print("Home Phone Number:");
+		long homephone = input.nextLong();
+		System.out.println("Cell Phone Number:");
+		long cellphone = input.nextLong();
+		File file = new File("c:/Users/ljodice/Desktop/"+firstname.charAt(0)+lastname+"profile.txt");
+		if (file.createNewFile()) {
+			System.out.println("File Created!");
+		}
+		else {
+			System.out.println("File already is there");
+		}
+		FileWriter writer = new FileWriter(file);
+		PrintWriter pw = new PrintWriter(writer);
+		writer.write("First Name:"+ firstname);
+		writer.write("\r\nLast name:"+lastname);
+		writer.write("\r\nmiddle initial:"+middleinitial);
+		writer.write("\r\nAge:"+age);
+		writer.write("\r\nheight:"+height);
+		writer.write("\r\nweight:"+weight+" lbs.");
+		writer.write("\r\nSSN:"+ssn);
+		writer.write("\r\nPhone Number-Home:"+homephone);
+		writer.write("\r\nPhone Number-Cell:"+cellphone);
+		pw.println("\r\nthanks for using, "+ firstname);
+	
+		System.out.println("Profile location is:\nc:/Users/ljodice/Desktop/"+firstname.charAt(0)+lastname+"profile.txt");
+		writer.close();
+		input.close();
+	}
