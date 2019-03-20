@@ -1,0 +1,3 @@
+First Name:Luke
+Last name:Jodice
+middle initial:jAge:18height:234weight:32 lbs.SSN:23443Phone Number-Home:2323Phone Number-Cell:23432thanks for using, Luke
